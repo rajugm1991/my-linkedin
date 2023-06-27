@@ -1,23 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/Header';
+import LeftSideContainer from './components/sidebar/LeftSideContainer';
+import BodyContainer from './components/body/BodyContainer';
+import RighSideContainer from './components/sidebar/RighSideContainer';
+import Body from './components/body/Body';
+
+/**
+ *  Header
+ *   - Logo
+ *   - Search components
+ *   - Link componenets
+ *      - Home, N/w,jobs, messaging, notification 
+ * 
+ *  Body
+ *    - Profile
+ *    - Recent Post
+ *    - Search Component
+ *    - Linkedin news
+ *    - ListPostComponent
+ *       - PostComponenet
+ * 
+ * 
+ * 
+ */
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+    
+       <Body/>
+ 
     </div>
   );
 }
