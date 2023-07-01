@@ -6,8 +6,8 @@ const RecentPost = () => {
     <div className='max-h-96 w-48 p-3 border border-t-white rounded-lg shadow-lg bg-white'>
          
          <div>
-          <p className='text-xs font-semibold'>Recent</p>
-          <ul>
+          <p className='text-xs font-semibold text-left'>Recent</p>
+          <ul className='pt-1'>
              <li className='flex'>
              <p className='px-2'>#️⃣</p> <p className='text-xs font-medium p-1'>Java developers</p>
              </li>
@@ -24,9 +24,9 @@ const RecentPost = () => {
              <p className='px-2'>#️⃣</p> <p className='text-xs font-medium p-1'>python</p>
              </li>
           </ul>
-          <p className='text-xs font-bold text-blue-500 pt-3'>Groups</p>
+          <p className='text-xs font-bold text-blue-600 pt-3 text-left'>Groups</p>
 
-          <ul>
+          <ul className='pt-1'>
              <li className='flex'>
              <p className='px-2'>👩‍👩‍👦‍👦</p> <p className='text-xs font-medium p-1'>Java Network</p>
              </li>
@@ -39,9 +39,9 @@ const RecentPost = () => {
             
           </ul>
 
-          <p className='text-xs font-bold text-blue-500 pt-3'>Follow Hash tags</p>
+          <p className='text-xs font-bold text-blue-600 pt-3 text-left'>Follow Hash tags</p>
 
-          <ul>
+          <ul className='pt-1'>
           <li className='flex'>
              <p className='px-2'>#️⃣</p> <p className='text-xs font-medium p-1'># Java</p>
              </li>

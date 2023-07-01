@@ -1,20 +1,17 @@
 import RecentPost from "../sidebar/RecentPost";
+import FeederList from "./feed/FeederList";
+import PostMessage from "./PostMessage";
 
 const BodyContainer=()=>{
 
     return(
-        <div>
+        <div className="pt-4 px-1">
             <>
-            Body Container
-            <RecentPost/>
-            <RecentPost/>
-            <RecentPost/>
-            <RecentPost/>
-            <RecentPost/>
-            <RecentPost/>
-            <RecentPost/>
-            
-           
+              <div>
+                <PostMessage/>
+                <FeederList/>
+              </div>
+
             </>
         </div>
     )

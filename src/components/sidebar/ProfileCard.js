@@ -22,15 +22,15 @@ const ProfileCard = () => {
         <div>
           <ul>
             <li className="flex m-1">
-              <p className="text-xs underline">Who's viewed your profile </p>{" "}
-              <p className="text-xs leading-8  underline text-blue-700 cursor-pointer">
+              <p className="text-xs underline text-left">Who's viewed your profile </p>{" "}
+              <p className="text-xs   underline text-blue-700 cursor-pointer">
                 {" "}
                 20
               </p>
             </li>
 
             <li className="flex m-1">
-              <p className="text-xs ">Connections grow your Network</p>{" "}
+              <p className="text-xs text-left">Connections grow your Network</p>{" "}
               <p className="text-xs  underline text-blue-700 cursor-pointer">
                 354
               </p>
@@ -38,7 +38,7 @@ const ProfileCard = () => {
           </ul>
         </div>
 
-        <div>
+        <div className="text-left">
           <p className="text-xs">Access exclusive tools & Insights</p>
           <h3 className="text-xs underline font-bold">
             {" "}
@@ -47,7 +47,7 @@ const ProfileCard = () => {
         </div>
 
         <div>
-          <span className="font-normal text-sm">My Items</span>
+          <span className="font-normal text-sm text-left">My Items</span>
         </div>
       </div>
     </div>
