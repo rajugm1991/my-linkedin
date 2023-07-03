@@ -6,9 +6,9 @@ import MessageFeed from './MessageFeed'
 function FeederList() {
   return (
     <div>
-        <MessageFeed/>
-        <MessageFeed/>
-        <MessageFeed/>
+        <MessageFeed type={'image'}/>
+        <MessageFeed type={'video'}/>
+        <MessageFeed type={'image'}/>
         <MessageFeed/>
     </div>
   )
