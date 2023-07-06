@@ -1,10 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/header/Header';
-import LeftSideContainer from './components/sidebar/LeftSideContainer';
-import BodyContainer from './components/body/BodyContainer';
-import RighSideContainer from './components/sidebar/RighSideContainer';
+
+
 import Body from './components/body/Body';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Notification from './components/pages/Notification';
+import BodyContainer from './components/body/BodyContainer';
+import { Provider } from 'react-redux';
+import store from './utils/store';
 
 /**
  *  Header
@@ -26,11 +29,33 @@ import Body from './components/body/Body';
  */
 
 function App() {
+
+
+  const router=createBrowserRouter([{
+
+    path:'/',
+    element: <><Header/> <Body/> </>,
+    children: [
+
+      {
+        path: '/',
+        element: <BodyContainer/>
+
+      },
+      {
+        path: 'notify',
+        element:  <Notification />
+      }
+
+    ]
+  }])
+
+
   return (
     <div className="App">
-      <Header/>
-    
-       <Body/>
+     <Provider store={store}>
+     <RouterProvider router={router}/>
+     </Provider>
  
     </div>
   );

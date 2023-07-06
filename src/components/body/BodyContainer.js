@@ -7,7 +7,7 @@ const BodyContainer=()=>{
     return(
         <div className="pt-4 px-1">
             <>
-              <div>
+              <div className="h-auto w-[37rem]">
                 <PostMessage/>
                 <FeederList/>
               </div>

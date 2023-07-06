@@ -3,7 +3,7 @@ import React from "react";
 function MessageFeed({type}) {
   return (
     <div className="pt-4 ">
-      <div className="h-auto w-[37rem] border border-t-white rounded-lg bg-white">
+      <div className=" border border-t-white rounded-lg bg-white">
         <div className="flex">
           <div class="photo-wrapper p-1 ">
             <img
