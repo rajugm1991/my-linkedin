@@ -1,9 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { USERS } from "../mockData/userData";
+
+
 
 
 const search=createSlice({
     name : 'search',
-    initialState: [],
+    initialState: {
+        searchResults:USERS
+    },
     reducers:{
         updateSearch:(state,payload)=>{
 
