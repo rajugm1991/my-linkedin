@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { USERS } from "../mockData/userData";
+import { DEFAULT_IMG, USERS } from "../mockData/userData";
 
 
 
@@ -10,8 +10,14 @@ const search=createSlice({
         searchResults:USERS
     },
     reducers:{
-        updateSearch:(state,payload)=>{
-
+        updateSearch:(state,action)=>{
+           
+            state.searchResults.unshift({
+                name:action.payload,
+                image:DEFAULT_IMG
+            })
+            state.searchResults.splice(5,1);
+            
         }
 
     }
@@ -19,6 +25,6 @@ const search=createSlice({
 })
 
 
-const {updateSearch}=search.actions;
+export const {updateSearch}=search.actions;
 
 export default search.reducer;
