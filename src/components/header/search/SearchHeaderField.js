@@ -1,24 +1,30 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateSearch } from "../../../utils/searchSlice";
+import { useNavigate } from "react-router-dom";
+import { updateSearch, updateShowSearch } from "../../../utils/searchSlice";
 import SearchResults from "./SearchResults";
 
 
 
 const SearchHeaderField = () => {
 
-    const [showSuggestion,setShowSuggestion]=useState(false);
-
     const [searchQuery,setSearchQuery]=useState('');
 
     const dispatch=useDispatch();
+
+    let navigate = useNavigate();
 
     const handleKeyPress=(e)=> {
       if (e.key === 'Enter') {
         // do whatever
         console.log(searchQuery)
         dispatch(updateSearch(searchQuery));
+        navigate(`/profile?name=`+searchQuery);
       }
+    }
+
+    const handleShowSearch=(val)=>{
+      dispatch(updateShowSearch(val));
     }
 
     return (
@@ -27,13 +33,13 @@ const SearchHeaderField = () => {
           <input
             className="p-2 m-2  w-80 border border-gray-200 rounded-r-lg bg-gray-100"
             placeholder="🔍 Search"
-            onFocus={()=>setShowSuggestion(true)}
+            onFocus={()=>handleShowSearch(true)}
             value={searchQuery}
-          onBlur={()=>{setSearchQuery('');setShowSuggestion(false)}}
-          onChange={(e)=>{setSearchQuery(e.currentTarget.value); setShowSuggestion(false)}}
+          onBlur={()=>{setSearchQuery('');handleShowSearch(false)}}
+          onChange={(e)=>{setSearchQuery(e.currentTarget.value); handleShowSearch(false)}}
           onKeyUp={(e)=>handleKeyPress(e)}
           />
-          <SearchResults showSuggestion={showSuggestion} />
+          <SearchResults />
         </div>
       </>
     );

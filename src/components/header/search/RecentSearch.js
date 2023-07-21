@@ -1,19 +1,23 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { updateSearch } from "../../../utils/searchSlice";
 import ProfileCard from "./ProfileCard";
 
 const RecentSearch = () => {
   const results = useSelector((store) => store.search.searchResults);
-  console.log(results);
+  const navigate=useNavigate();
+
+  const dispatch=useDispatch();
   return (
     <div>
       <h1 className="text-sm font-semibold text-left m-3">Recent</h1>
       <ul className="flex flex-row m-2     space-x-6  ">
         {results.map((x) => (
           <>
-            <li className="m-2">
+            <Link onMouseDown={()=> {navigate(`/profile/?name=${x.name}`) ;dispatch(updateSearch(x.name))}}><li className="m-2">
               <ProfileCard data={x} />
-            </li>
+            </li></Link>
           </>
         ))}
       </ul>

@@ -8,6 +8,9 @@ import Notification from './components/pages/Notification';
 import BodyContainer from './components/body/BodyContainer';
 import { Provider } from 'react-redux';
 import store from './utils/store';
+import ProfileView from './components/profile/ProfileView';
+import LeftSideContainer from './components/sidebar/LeftSideContainer';
+import OutletComponent from './components/OutletComponent';
 
 /**
  *  Header
@@ -35,17 +38,34 @@ function App() {
   const router=createBrowserRouter([{
 
     path:'/',
-    element: <><Header/> <Body/> </>,
+    element: <><Header/>  <Body/> </>,
     children: [
 
       {
         path: '/',
-        element: <BodyContainer/>
+        element: <> <LeftSideContainer/><BodyContainer/></>
 
       },
       {
         path: 'notify',
-        element:  <Notification />
+        element:  <OutletComponent />,
+        children :[
+          {
+            path:'',
+            element:<Notification/>
+          }
+        ]
+      },
+      {
+        path: 'profile',
+        element: <OutletComponent/>,
+        children: [
+          {
+            path: '',
+            element: <ProfileView/>
+          }
+        ]
+
       }
 
     ]
